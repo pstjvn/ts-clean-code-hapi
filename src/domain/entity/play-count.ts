@@ -4,7 +4,7 @@ import { SeasonAverage } from "./season-average";
 export class PlayCount {
     player: Player;
     seasons: SeasonAverage[] = [];
-    private _aboveFifthy?: number | null;
+    private _aboveFifthy?: number | null = null;
 
     get count(): number {
         return this.seasons.length;

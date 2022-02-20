@@ -19,7 +19,7 @@ export type SerializedError = {
  * This should possibly be in an utility collection as building an API would 
  * require consistency of the returned data...
  */
-const serializePlayerSeasonsSummary = (data: PlayCount | Failure): AboveBellow50Games | SerializedError => {
+export const serializePlayerSeasonsSummary = (data: PlayCount | Failure): AboveBellow50Games | SerializedError => {
     if (data instanceof Failure) {
         return {
             isError: true,
