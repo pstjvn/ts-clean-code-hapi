@@ -32,13 +32,18 @@ If a player matching the search term is not found the output would look like thi
 
 The code is written with SOLID in mind and is a **demo**.
 
-This means that it *may* contain bugs and *does not* handle all possible edge cases. However the code
-is structured in a way that is extreamly easy to extend, test and allow for re-exposing the main functionality 
-in different manners (i.e. CLI, cloud fn etc.)
+Тhe code is structured in a way that is extreamly easy to extend, test and allow for 
+re-exposing the main functionality in different manners (i.e. CLI, cloud fn etc.)
 
 One of the main requirements was to keep in mind that the **'LeBron'** usecase is to be
 extended soon, thus the functionality is generalized, and instead the 'LeBron' usage is
-made the specific (i.e. exposed as `/` for demo).
+made the specific.
+
+The following URLs are exposed:
+
+`/ `- The main HTML 
+`/lebronjames` - stats specific for lebron
+`/stats?search=search_term` - search for first matching player's stats
 
 Test were to be done with jest (ts-jest), however the time was not sufficient. Also no
 DI container was added for time restrictions, but a suitable one would be 
