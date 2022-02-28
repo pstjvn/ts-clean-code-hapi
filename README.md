@@ -1,4 +1,4 @@
-# Assesment demo
+# Assesment
 
 ## How to run
 
@@ -10,7 +10,7 @@ npm start
 Then open the url seen in the console in your browser 
 
 ## Stackblitz support
-You can connect the stackblitz node demo instance to this repo, it will overwrite the files and then in the terminal run
+You can connect the stackblitz node instance to this repo, it will overwrite the files and then in the terminal run
 
 ```
 npm i
@@ -30,7 +30,7 @@ If a player matching the search term is not found the output would look like thi
 
 ## Implementation info
 
-The code is written with SOLID in mind and is a **demo**.
+The code is written with SOLID in mind.
 
 Тhe code is structured in a way that is extreamly easy to extend, test and allow for 
 re-exposing the main functionality in different manners (i.e. CLI, cloud fn etc.)
@@ -45,7 +45,8 @@ The following URLs are exposed:
 `/lebronjames` - stats specific for lebron
 `/stats?search=search_term` - search for first matching player's stats
 
-Test were to be done with jest (ts-jest), however the time was not sufficient. Also no
-DI container was added for time restrictions, but a suitable one would be 
-[inversify](https://github.com/inversify/InversifyJS). Insead of DI container, manual instantiation was used as the demo is small enough to support this approach.
+Tests can be added with jest (ts-jest). 
+
+DI container can be added, suitable one would be 
+[inversify](https://github.com/inversify/InversifyJS). Insead of DI container, manual instantiation was used for brevity.
 
