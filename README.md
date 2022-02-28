@@ -7,6 +7,7 @@ cd rootDirectoryOfProject
 npm i
 npm start
 ```
+Then open the url seen in the console in your browser 
 
 ## Stackblitz support
 You can connect the stackblitz node demo instance to this repo, it will overwrite the files and then in the terminal run
@@ -15,10 +16,16 @@ You can connect the stackblitz node demo instance to this repo, it will overwrit
 npm i
 npm start
 ```
-The container output should look like this:
+The container output should present a form with a search field, enter the name you'd like to search for stats and press enter of the 'Go' button. The result would look something like this when a player is recognized.
 
 ```
 {"name":"James, LeBron","above50":6,"bellow50":1}
+```
+
+If a player matching the search term is not found the output would look like this:
+
+```
+{"isError":true,"message":"Query cannot be completed","detail":"No user found matching search term"}
 ```
 
 ## Implementation info
