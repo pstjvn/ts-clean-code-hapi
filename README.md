@@ -42,7 +42,9 @@ made the specific.
 The following URLs are exposed:
 
 `/ `- The main HTML 
+
 `/lebronjames` - stats specific for lebron
+
 `/stats?search=search_term` - search for first matching player's stats
 
 Tests can be added with jest (ts-jest). 
