@@ -8,7 +8,7 @@ export const getLeBronStats = (controller: (req: Request, h: ResponseToolkit)=> 
         register: async function(server) {
           server.route({
             method: 'GET',
-            path: '/',
+            path: '/lebronjames',
             handler: controller,
             options: { cors: true }
           });

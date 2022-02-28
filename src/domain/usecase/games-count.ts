@@ -27,7 +27,7 @@ export class GamesCountUsecase {
         if (seasonsData instanceof Failure) return seasonsData;
         let pc = new PlayCount();
         pc.player = player as Player;
-        pc.seasons = seasonsData;
+        pc.seasons = seasonsData.filter(season => !(season instanceof Failure));
         return pc;
     }
 }

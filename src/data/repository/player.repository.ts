@@ -13,7 +13,11 @@ export class PlayerRepository implements IPlayerRepository {
             let player = Player.fromPOJO(data);
             return player;
         } catch (e) {
-            return new Failure(e);
+            if ((e as Error).message === 'No response data found') {
+                return new Failure('No user found matching search term');
+            } else {
+                return new Failure(e);
+            }
         }
     }
 }

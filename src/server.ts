@@ -8,6 +8,7 @@ import { getPlayerStats } from './presentation/routes/get.player.games';
 import * as Hapi from '@hapi/hapi';
 import { getLeBronSeasonsControllerFactory } from './presentation/controller/lebron-games';
 import { getLeBronStats } from './presentation/routes/get.lebron.games';
+import { getHtmlPage } from './presentation/routes/get.html';
 
 async function createServerInstance(di?: any): Promise<Hapi.Server> {
   let server = Hapi.server({
@@ -27,6 +28,8 @@ async function loadPlugins(server: Hapi.Server, di?: any) {
     let playerStatsCtrl = getPlayerSeasonsControllerFactory(useCase);
     let playerStatsRoute = getPlayerStats(playerStatsCtrl);
     await server.register(playerStatsRoute);
+
+    await server.register(getHtmlPage());
 
     // Now for our edge case - looking up only LeBron James' stats and putting it
     // as the main URL for the demo to work.

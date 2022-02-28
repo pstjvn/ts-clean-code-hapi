@@ -24,10 +24,6 @@ export class SeasonRepository {
         if (player instanceof Failure) return player;
         let promises = seasons.map((season) => this.getSeasonAverages(player, season));
         let responses = await Promise.all(promises);
-        let potentialFailure: Failure = responses.find(r => r instanceof Failure) as Failure | undefined;
-        if (potentialFailure) 
-            return potentialFailure;
-        else 
-            return responses as SeasonAverage[];
+        return responses as SeasonAverage[];
     }
 }

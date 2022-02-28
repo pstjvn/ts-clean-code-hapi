@@ -38,7 +38,7 @@ export const serializePlayerSeasonsSummary = (data: PlayCount | Failure): AboveB
 export const getPlayerSeasonsControllerFactory = (
     useCase: GamesCountUsecase): (req: Request, h: ResponseToolkit)=> Promise<AboveBellow50Games|SerializedError> => {
     return async (req: Request, h: ResponseToolkit) => {
-        let searchName = req.params.search;
+        let searchName = req?.query?.search;
         if (!searchName) return serializePlayerSeasonsSummary(new Failure('No player name selected'));
         let seasonsInfo = await useCase.getGameSpread(searchName);
         let result = serializePlayerSeasonsSummary(seasonsInfo);
